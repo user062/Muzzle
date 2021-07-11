@@ -1,5 +1,6 @@
 ![Muzzle Logo](https://github.com/PikoStudios/Muzzle/blob/main/.github/assests/muzzle.png?raw=true)
 
+This is the Nintendo Switch Port
 
 
 [Discord Server](https://discord.gg/Rw2FdYw5dK) | [Twitter](https://twitter.com/piko_studios)
