@@ -8,6 +8,11 @@ void StartApplet(Applet *self)
 
 Applet InitializeApplet(const int WIDTH, const int HEIGHT, const char* WINDOW_TITLE, int RESIZEABLE, int VSYNC)
 {
+    consoleInit(NULL);
+    padConfigureInput(1, HidNpadStyleSet_NpadStandard);
+
+    padInitializeDefault(&pad);
+
     glfwSetErrorCallback(muzzle_error);
     // Initialize GLFW
     if(!glfwInit()) 

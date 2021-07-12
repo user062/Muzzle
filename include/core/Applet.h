@@ -4,6 +4,7 @@
 #include "callback.h"
 #include "../backend.h"
 
+static PadState pad;
 
 typedef struct Applet
 {
@@ -28,3 +29,6 @@ void StartApplet(Applet *self);
 * @return Applet
 */
 Applet InitializeApplet(const int WIDTH, const int HEIGHT, const char* WINDOW_TITLE, int RESIZEABLE, int VSYNC);
+
+// INTERNAL FUNCTION
+PadState* __get_pointer_to_pad_state();

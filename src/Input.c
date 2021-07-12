@@ -1,23 +1,21 @@
 #include "core/Input.h"
 
-int key_up(Applet *applet, KeyInput key)
+int button_down(HidNpadButton button)
 {
-    if (glfwGetKey(applet->window_handle, key) == GLFW_RELEASE) return 1;
-    else return 0;
-}
-int key_down(Applet *applet, KeyInput key)
-{
-    if (glfwGetKey(applet->window_handle, key) == GLFW_PRESS) return 1;
+    if (__pad_down & button) return 1;
     else return 0;
 }
 
-int mouse_up(Applet *applet, MouseInput button)
+void update_input()
 {
-    if (glfwGetMouseButton(applet->window_handle, button) == GLFW_RELEASE) return 1;
-    else return 0;
+    padUpdate(__get_pointer_to_pad_state());
+
+    __pad_down = padGetButtonsDown(__get_pointer_to_pad_state());
+    __pad_up = padGetButtonsUp(__get_pointer_to_pad_state());
 }
-int mouse_down(Applet *applet, MouseInput button)
+
+int button_up(HidNpadButton button)
 {
-    if (glfwGetMouseButton(applet->window_handle, button) == GLFW_PRESS) return 1;
+    if (__pad_up & button) return 1;
     else return 0;
 }

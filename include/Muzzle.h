@@ -1,10 +1,5 @@
 #pragma once
 
-#ifdef _WIN32
-    // Include WinAPI if on windows. Required for MultiByteToWideChar
-    #include "windows.h"
-#endif
-
 #include "core/Applet.h"
 #include "core/vector.h"
 #include "core/Drawing.h"
@@ -17,5 +12,5 @@
 #include <stdlib.h>
 
 void QuitMuzzle(Applet applet);
-
+void update_console();
 
