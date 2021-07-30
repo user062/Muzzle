@@ -16,6 +16,6 @@
 #define MUZZLE_FALSE 0
 #define MUZZLE_TRUE 1
 
-#include "glfw3.h"
+#include <GLFW/glfw3.h>
 #include <switch.h>
 typedef GLFWwindow* MUZZLE_WINDOW;
