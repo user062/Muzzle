@@ -1,4 +1,4 @@
-# Muzzle.h
+# backend.h
 
 Includes:
 * glfw3.h
