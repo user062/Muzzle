@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
+# Welcome to Muzzle
+Muzzle is a C(99) Game Framework with a Raylib-Like Syntax using GLFW and OpenGL
 
-You can use the [editor on GitHub](https://github.com/PikoStudios/Muzzle/edit/gh-pages/docs/index.md) to maintain and preview the content for your website in Markdown files.
+## Dependencies
+* GLFW (located in deps/gflw as a submodule)
+* STB Headers (located in deps/stb)
+* Fontstash (located in deps/fonstash)
+* OpenGL
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Exmaple Code
+```c
+#define MUZZLE_DEPS
+#include <Muzzle.h>
+#include <stdio.h>
+#define SCREEN_WIDTH 1280
+#define SCREEN_HEIGHT 720
 
-### Markdown
+Applet applet;
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+void OnAppletUpdate()
+{
 
-```markdown
-Syntax highlighted code block
+    while (keep_applet(applet.window_handle))
+    {
+        begin_drawing();
+            clear_screen(GRAY);
+        end_drawing(&applet);
+    }
+    
+}
 
-# Header 1
-## Header 2
-### Header 3
+int main(void)
+{
+    applet = InitializeApplet(SCREEN_WIDTH, SCREEN_HEIGHT, "Muzzle [CORE] - Blank Window", MUZZLE_FALSE, MUZZLE_FALSE);
+    StartApplet(&applet);
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+    QuitMuzzle(applet);
+    return 0;
+}
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/PikoStudios/Muzzle/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
