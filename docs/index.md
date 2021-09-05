@@ -38,3 +38,6 @@ int main(void)
     return 0;
 }
 ```
+
+## Docs
+[Check out the docs here](https://pikostudios.github.io/Muzzle/docs/)
