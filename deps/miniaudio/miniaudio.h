@@ -2,6 +2,8 @@
 Audio playback and capture library. Choice of public domain or MIT-0. See license statements at the end of this file.
 miniaudio - v0.10.42 - 2021-08-22
 
+** NOTE FROM MUZZLE: This has been slightly modified for use in mz_audio **
+
 David Reid - mackron@gmail.com
 
 Website:       https://miniaud.io
