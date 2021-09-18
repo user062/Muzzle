@@ -3,6 +3,7 @@ Audio playback and capture library. Choice of public domain or MIT-0. See licens
 miniaudio - v0.10.42 - 2021-08-22
 
 ** NOTE FROM MUZZLE: This has been slightly modified for use in mz_audio **
+** NOTE FROM MUZZLE: Modified code will have a comment stating that its modified next to it **
 
 David Reid - mackron@gmail.com
 
@@ -3442,7 +3443,7 @@ struct ma_device_config
     struct
     {
         const ma_device_id* pDeviceID;
-        ma_format format;
+        int format; // [NOTE]: Modified
         ma_uint32 channels;
         ma_channel channelMap[MA_MAX_CHANNELS];
         ma_channel_mix_mode channelMixMode;
@@ -3451,7 +3452,7 @@ struct ma_device_config
     struct
     {
         const ma_device_id* pDeviceID;
-        ma_format format;
+        int format; // [NOTE]: Modified
         ma_uint32 channels;
         ma_channel channelMap[MA_MAX_CHANNELS];
         ma_channel_mix_mode channelMixMode;
@@ -4862,7 +4863,7 @@ See Also
 ma_device_init()
 ma_device_init_ex()
 */
-MA_API ma_device_config ma_device_config_init(ma_device_type deviceType);
+MA_API ma_device_config ma_device_config_init(int deviceType); // [NOTE] This function has been modified
 
 
 /*
@@ -7124,7 +7125,7 @@ static MA_INLINE void ma_yield()
 
 /* The default format when ma_format_unknown (0) is requested when initializing a device. */
 #ifndef MA_DEFAULT_FORMAT
-#define MA_DEFAULT_FORMAT                                   ma_format_f32
+#define MA_DEFAULT_FORMAT                                   
 #endif
 
 /* The default channel count to use when 0 is used when initializing a device. */
@@ -33581,7 +33582,7 @@ MA_API ma_bool32 ma_context_is_loopback_supported(ma_context* pContext)
 }
 
 
-MA_API ma_device_config ma_device_config_init(ma_device_type deviceType)
+MA_API ma_device_config ma_device_config_init(int deviceType) // **[NOTE] This function has been modified**
 {
     ma_device_config config;
     MA_ZERO_OBJECT(&config);
