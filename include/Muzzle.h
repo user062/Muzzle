@@ -5,6 +5,10 @@
     #include "windows.h"
 #endif
 
+#ifdef MZ_SUPPORT_AUDIO
+    #warning mz_audio is not at a usable state, it will not be included
+#endif
+
 #include "core/Applet.h"
 #include "core/vector.h"
 #include "core/Drawing.h"
